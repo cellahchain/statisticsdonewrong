@@ -1,0 +1,85 @@
+%% Chapter 7 %%%
+\chapter{Регрессия к среднему и правила остановки}
+\label{chp7}
+
+Медицинские испытания недешевы. Чтобы обеспечить группу пациентов экспериментальными лекарствами и отслеживать проявления их симптомов на протяжении месяцев, может потребоваться значительное количество ресурсов, поэтому многие фармакологические компании разработали т.н. ``правила остановки'', которые позволяют исследователям остановить эксперимент заранее, если очевидно, что экспериментальное лекарство имело значительный эффект. Например, если эксперимент проведён только на половину, но у исследователей уже есть статистически значимые различия в симптомах от действия нового препарата - в таком случае, исследователи могут остановить эксперимент, не стремясь собрать больше данных для подкрепления своих выводов.
+
+Однако, если исследование проведено плохо, это может привести к огромному количеству ложноположительных результатов. 
+
+Например, представьте, что мы сравниваем две группы пациентов, одна их которых принимает лекарство, а другая - плацебо. Мы измеряем уровень какого-нибудь белка в их кровотоке, интерпретируя это как результат действия лекарства. Однако в этом случае, лекарство не вызывает никаких различий: пациенты обеих групп имеют одинаковый средний уровень белка, хотя, естественно, индивидуально уровни слегка различаются. 
+
+Мы начинаем эксперимент с десятью пациентами в каждой группе, и постепенно собираем всё больше данных. В процессе эксперимента, мы проводим $t-$тест для сравнения двух групп и проверки наличия между ними статистически значимых различий в среднем уровне белка. Мы можем увидеть данные, схожие с результатами симуляции на рисунке ниже:
+
+
+\newpage % делаем разрыв, чтобы картинка была первой на след странице
+
+%%%%%%%%%%%%%% figure 9 %%%%%%%%%%%%%%%%%%5
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{sample-size}
+    %\caption{}
+    \label{fig9:sample-size}
+\end{figure}
+%%%%%%%%%%%%%%% end of figure %%%%%%%%%%%%%%%%%%%
+
+Этот график показывает \emph{p}-значение различия между группами в процессе сбора нами данных, а горизонтальная линия означает уровень значимости $p = 0,05$. На первый взгляд может показаться, что значимых различий нет. Тогда мы собираем больше данных и делаем противоположный вывод. Если бы мы решили остановиться, это было бы заблуждением: мы были бы убеждены в том, что между группами существует значимое различие, в то время как в реальности его нет. Если мы соберём еще больше данных, мы поймем, что были неправы - но в таком случае, есть шанс снова получить ложноположительный результат.  
+
+Можно ожидать, что такое изменение \emph{p}-значения не должно происходить, поскольку реальных различий между группами нет. В конце концов, сбор большего количества данных не должно ухудшать наши выводы, разве нет? И действительно, если мы проведем эксперимент еще раз, мы можем обнаружить, что в начале у групп нет значимых различий, и они не появляются, пока мы собираем данные, или, что сначала у групп есть огромные различия, но в процессе эксперимента они быстро уменьшаются до нуля. Но если мы подождем достаточно долго и будем сравнивать различия после каждого измерения, в конечном итоге мы можем пересечь любую произвольную линию статистической значимости, даже если в реальности различий не будет. Обычно мы не в состоянии собирать данные на бесконечных выборках, поэтому в реальности такого не происходит, но неудачно  составленные и плохо применяемые правила остановки все равно значимо увеличивают количество ложноположительных результатов. \cite{simmons_false-positive_2011}  
+
+
+Современные клинические испытания часто требуют регистрации используемых статистических протоколов заранее, и, как правило, выбирают только некоторые резальтаты измерения, которые потом тестируют, вместо того, чтобы тестировать после каждого измерения. Это вызывает лишь небольшое увеличение ложноположительных результатов, которое можно корректировать тщательно подобранными уровнями значимости и используя сложные статистические методы.\cite{todd_interim_2001} Но в сферах науки, где протоколы исследования не регистрируются и у исследователей есть возможность выбирать любые методы, которые они считают подходящими, всегда могут скрываться ложноположительные демоны.
+
+
+\section{Преувеличение истины}
+\label{chp7:truthinflation}
+
+Medical trials also tend to have inadequate statistical power to detect moderate differences between medications. So they want to stop as soon as they detect an effect, but they don’t have the power to detect effects.
+
+Suppose a medication reduces symptoms by 20\% over a placebo, but the trial you’re using to test it does not have adequate statistical power to detect this difference. We know that small trials tend to have varying results: it’s easy to get ten lucky patients who have shorter colds than usual, but much harder to get ten thousand who all do.
+
+Now imagine running many copies of this trial. Sometimes you get unlucky patients, and so you don’t notice any statistically significant improvement from your drug. Sometimes your patients are exactly average, and the treatment group has their symptoms reduced by 20\% – but you don’t have enough data to call this a statistically significant increase, so you ignore it. Sometimes the patients are lucky and have their symptoms reduced by much more than 20\%, and so you stop the trial and say “Look! It works!”
+
+You’ve correctly concluded that your medication is effective, but you’ve inflated the size of its effect. You falsely believe it is much more effective than it really is.
+
+This effect occurs in pharmacological trials, epidemiological studies, gene association studies (“gene A causes condition B”), psychological studies, and in some of the most-cited papers in the medical literature.30, 32 In fields where trials can be conducted quickly by many independent researchers (such as gene association studies), the earliest published results are often wildly contradictory, because small trials and a demand for statistical significance cause only the most extreme results to be published.33
+
+As a bonus, truth inflation can combine forces with early stopping rules. If most drugs in clinical trials are not quite so effective to warrant stopping the trial early, then many trials stopped early will be the result of lucky patients, not brilliant drugs – and by stopping the trial we have deprived ourself of the extra data needed to tell the difference. Reviews have compared trials stopped early with other studies addressing the same question which did not stop early; in most cases, the trials stopped early exaggerated the effects of their tested treatments by an average of 29%.3
+
+Of course, we do not know The Truth about any drug being studied, so we cannot tell if a particular study stopped early due to luck or a particularly good drug. Many studies do not even publish the original intended sample size or the stopping rule which was used to justify terminating the study.43 A trial’s early stoppage is not automatic evidence that its results are biased, but it is a suggestive detail.
+
+\section{Little extremes}
+\label{chp7:littleextremes}
+
+Suppose you’re in charge of public school reform. As part of your research into the best teaching methods, you look at the effect of school size on standardized test scores. Do smaller schools perform better than larger schools? Should you try to build many small schools or a few large schools?
+
+To answer this question, you compile a list of the highest-performing schools you have. The average school has about 1,000 students, but the top-scoring five or ten schools are almost all smaller than that. It seems that small schools do the best, perhaps because of their personal atmosphere where teachers can get to know students and help them individually.
+
+Then you take a look at the worst-performing schools, expecting them to be large urban schools with thousands of students and overworked teachers. Surprise! They’re all small schools too.
+
+What’s going on? Well, take a look at a plot of test scores vs. school size:
+
+
+\newpage % делаем разрыв, чтобы картинка была первой на след странице
+
+%%%%%%%%%%%%%% figure 10 %%%%%%%%%%%%%%%%%%5
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{school-size}
+    %\caption{}
+    \label{fig9:school-size}
+\end{figure}
+%%%%%%%%%%%%%%% end of figure %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+%http://www.statisticsdonewrong.com/_images/school-size.png
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Smaller schools have more widely varying average test scores, entirely because they have fewer students. With fewer students, there are fewer data points to establish the “true” performance of the teachers, and so the average scores vary widely. As schools get larger, test scores vary less, and in fact increase on average.
+
+This example used simulated data, but it’s based on real (and surprising) observations of Pennsylvania public schools.59
+
+Another example: In the United States, counties with the lowest rates of kidney cancer tend to be Midwestern, Southern and Western rural counties. How could this be? You can think of many explanations: rural people get more exercise, inhale less polluted air, and perhaps lead less stressful lives. Perhaps these factors lower their cancer rates.
+
+On the other hand, counties with the highest rates of kidney cancer tend to be Midwestern, Southern and Western rural counties.
+
+The problem, of course, is that rural counties have the smallest populations. A single kidney cancer patient in a county with ten residents gives that county the highest kidney cancer rate in the nation. Small counties hence have vastly more variable kidney cancer rates, simply because they have so few residents.21
+
