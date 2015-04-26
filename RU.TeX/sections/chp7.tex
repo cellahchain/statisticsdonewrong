@@ -43,30 +43,30 @@
 
 Это часто встречается в фармакологических испытаниях, эпидемиологических исследованиях, исследованиях связей на генном уровне (``ген А является причиной условия В''), психологических исследованиях и в некоторых наиболее цитируемых статьях в медицинской литературе. \cite{ioannidis_why_2008,ioannidis_contradicted_2005} В сферах, где испытания могут проводиться быстро и большим количеством независимых исследователей (как, например, исследования генных связей), самые первые опубликованные результаты зачастую оказываются крайне противоречивыми, поскольку небольшие размеры экспериментов и потребность в статистической значимости приводят к тому, что лишь наиболее выдающиеся результаты в итоге публикуются. \cite{ioannidis_early_2005} 
 
-В качестве бонуса, преувеличение истины можно объединять с правилами предварительной остановки. Если большинство лекарств в клинических испытаниях не настолько эффективны, чтобы оправдать предварительную остановку испытаний, в таком случае большинство экспериментов, остановленных предварительно, будут результатом участия удачливых пациентов, а не действия выдающихся лекарств, - и, останавливая эксперимент, мы фактически лишаем себя возможности собрать дополнительные данные, чтобы это опровергнуть. Обзоры научной литературы сравнивали исследования, остановленные предварительно,  
+В качестве бонуса, преувеличение истины можно объединять с правилами предварительной остановки. Если большинство лекарств в клинических испытаниях не настолько эффективны, чтобы оправдать предварительную остановку испытаний, в таком случае большинство экспериментов, остановленных предварительно, будут результатом участия удачливых пациентов, а не действия выдающихся лекарств, - и, останавливая эксперимент, мы фактически лишаем себя возможности собрать дополнительные данные, чтобы это опровергнуть. В обзорах научной литературы сравнивались исследования, остановленные предварительно, с другими, которые изучали те же вопросы, но не были предварительно остановлены, и в большинстве случаев, в предварительно остановленных исследованиях эффект действия тестируемых лекарств был в среднем преувеличен на 29\%. \cite{bassler_stopping_2010} 
 
-As a bonus, truth inflation can combine forces with early stopping rules. If most drugs in clinical trials are not quite so effective to warrant stopping the trial early, then many trials stopped early will be the result of lucky patients, not brilliant drugs – and by stopping the trial we have deprived ourself of the extra data needed to tell the difference. Reviews have compared trials stopped early with other studies addressing the same question which did not stop early; in most cases, the trials stopped early exaggerated the effects of their tested treatments by an average of 29%.3
+Естественно, нам неизвестна ``Истина'' о каждом исследуемом лекарстве, поэтому сложно судить, было ли конкретное исследование предварительно остановлено из-за хорошего лекарства или по желанию исследователей. Во многих исследованиях даже не публикуется изначально планируемый размер выборки или правила остановки, используемые для обоснования прекращения исследования. \cite{montori_randomized_2005} Предварительная остановка исследования не свидетельствует автоматически о том, что его результаты ошибочны, но это определенно наводит на мысль.  
 
-Of course, we do not know The Truth about any drug being studied, so we cannot tell if a particular study stopped early due to luck or a particularly good drug. Many studies do not even publish the original intended sample size or the stopping rule which was used to justify terminating the study.43 A trial’s early stoppage is not automatic evidence that its results are biased, but it is a suggestive detail.
 
-\section{Little extremes}
+
+\section{Маленькие крайности}
 \label{chp7:littleextremes}
 
-Suppose you’re in charge of public school reform. As part of your research into the best teaching methods, you look at the effect of school size on standardized test scores. Do smaller schools perform better than larger schools? Should you try to build many small schools or a few large schools?
+Предположим, что вы ответственны за проведение реформы государственных школ. В рамках изучениях лучших методов обучения, вы обратили внимание на влияние размера школы на результаты тестирования учеников. Лучше ли результаты у маленьких школ, чем у больших? Стоит ли построить большое количество небольших школ или лучше несколько больших?   
 
-To answer this question, you compile a list of the highest-performing schools you have. The average school has about 1,000 students, but the top-scoring five or ten schools are almost all smaller than that. It seems that small schools do the best, perhaps because of their personal atmosphere where teachers can get to know students and help them individually.
+Чтобы найти ответы на эти вопросы, вы составляете список лучших школ. В среднем, в школе около 1000 учеников, но практически во всех школах, входящих в десятку лучших по списку, учеников меньше. Похоже, что маленькие школы справляются с обучением лучше, возможно из-за того, что в них формируются условия, при которых учителям удаётся получше узнать учеников и помогать им в индивидуальном порядке.
 
-Then you take a look at the worst-performing schools, expecting them to be large urban schools with thousands of students and overworked teachers. Surprise! They’re all small schools too.
+Затем вы смотрите на худшие из списка школы, ожидая увидеть там большие городские школы с тысячами учеников и перегруженными работой учителями, однако, к вашему удивлению, и там все школы маленькие. 
 
-What’s going on? Well, take a look at a plot of test scores vs. school size:
+Что же происходит? Давайте посмотрим на график зависимости результатов тестирования от размера школ:
 
 
-\newpage % делаем разрыв, чтобы картинка была первой на след странице
+%\newpage % делаем разрыв, чтобы картинка была первой на след странице
 
 %%%%%%%%%%%%%% figure 10 %%%%%%%%%%%%%%%%%%5
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.5\textwidth]{school-size}
+    \includegraphics[width=0.8\textwidth]{school-size}
     %\caption{}
     \label{fig9:school-size}
 \end{figure}
@@ -75,13 +75,13 @@ What’s going on? Well, take a look at a plot of test scores vs. school size:
 %http://www.statisticsdonewrong.com/_images/school-size.png
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Smaller schools have more widely varying average test scores, entirely because they have fewer students. With fewer students, there are fewer data points to establish the “true” performance of the teachers, and so the average scores vary widely. As schools get larger, test scores vary less, and in fact increase on average.
+У маленьких школ средние значения результатов тестирования значительно варьируются, в основном из-за того, что у них меньше учеников. Меньшее количество учеников означает меньшее наличие данных для того, чтобы установить ``истинные'' результаты работы учителей, и поэтому средние значения результатов сильно разнятся. Чем крупнее школа, тем меньше варьируют результаты, а среднее значение, в действительности, даже увеличивается.  
 
-This example used simulated data, but it’s based on real (and surprising) observations of Pennsylvania public schools.59
+В этом примере использовались данные симуляции, но он основан на настоящих (и неожиданных) результатах наблюдения за государственными школами Пенсильвании. \cite{wainer_most_2007}
 
-Another example: In the United States, counties with the lowest rates of kidney cancer tend to be Midwestern, Southern and Western rural counties. How could this be? You can think of many explanations: rural people get more exercise, inhale less polluted air, and perhaps lead less stressful lives. Perhaps these factors lower their cancer rates.
+Другой пример: В Соединенных Штатах, наименьший уровень заболевания раком почки, как правило, имеют сельские округа Среднего Запада, а также южные и западные штаты. Почему так? Можно найти несколько объяснений, например: деревенские жители больше заняты физическим трудом, дышат менее загрязненным воздухом и, возможно, ведут менее напряженный образ жизни. Вероятно, эти факторы снижают показатели встречаемости рака. 
 
-On the other hand, counties with the highest rates of kidney cancer tend to be Midwestern, Southern and Western rural counties.
+С другой стороны, округа с самыми высоким уровнем заболевания раком почки выступают те же сельские округа Среднего Запада, южные и западные штаты.
 
-The problem, of course, is that rural counties have the smallest populations. A single kidney cancer patient in a county with ten residents gives that county the highest kidney cancer rate in the nation. Small counties hence have vastly more variable kidney cancer rates, simply because they have so few residents.21
+Проблема, естественно, заключает в том, что в сельской местности живёт меньше людей. Единственный пациент с диагнозом рака почки в округе, где живет всего 10 человек, даст этому округу самый высокий уровень заболевания раком почки по всей стране. Следовательно, маленькие округа имеют значительно более варьируемые показатели заболевания раком почки, просто потому, что у них так мало жителей. \cite{gelman_all_1999}
 
