@@ -6,7 +6,3 @@
 *.out
 *.synctex.gz
 *.bbl
-RU.TeX/fulltext.pdf
-RU.TeX/fulltext.tex
-RU.TeX/sections/*
-RU.TeX/*
